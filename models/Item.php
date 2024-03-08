@@ -36,4 +36,12 @@ class Item {
     public function getPrice() {
         return $this->price;
     }
+
+    public function setPet($_pet) {
+        $this->pet = $_pet;
+    }
+
+    public function getPet() {
+        return $this->pet;
+    }
 }
