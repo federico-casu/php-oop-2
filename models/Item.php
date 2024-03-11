@@ -13,6 +13,10 @@ class Item {
         $this->name = $_name;
         $this->price = $_price;
         $this->pet = $_pet;
+
+        if ($this->pet != 'Dog' && $this->pet != 'Cat') {
+            throw new Exception('The only accepted values are: Dog and Cat');
+        }
     }
 
     public function setImage($_image) {

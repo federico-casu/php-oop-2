@@ -14,11 +14,15 @@ include_once __DIR__ . '/models/classes.php';
 
 $store = [];
 
-$store['collare'] = new Product('Collare', 12.00, 'Dog');
-$store['crocchette_1kg'] = new Food('Crocchette 1kg', 14.50, 'Dog', 200.00);
-$store['palla_da_tennis'] = new Game('Palla da tennis', 9.98, 'Cat', 'Ball');
-$store['lettiera_chiusa'] = new Product('Lettiera chiusa', 49.98, 'Cat');
-$store['cuccia_interno'] = new Product('Cuccia da Interno', 35.99, 'Dog');
+try {
+    $store['collare'] = new Product('Collare', 12.00, 'Dog');
+    $store['crocchette_1kg'] = new Food('Crocchette 1kg', 14.50, 'Dog', 200.00);
+    $store['palla_da_tennis'] = new Game('Palla da tennis', 9.98, 'Cat', 'Ball');
+    $store['lettiera_chiusa'] = new Product('Lettiera chiusa', 49.98, 'Cat');
+    $store['cuccia_interno'] = new Product('Cuccia da Interno', 35.99, 'Dog');
+} catch (Exception $e) {
+    echo 'Errore: ' . $e->getMessage();
+}
 
 $store['collare']->setImage('https://shop-cdn-m.mediazs.com/bilder/7/400/383839_pla_halsband_biothane_40cm_grau_hs_01_7.jpg');
 $store['crocchette_1kg']->setImage('https://shop-cdn-m.mediazs.com/bilder/0/400/briantos_adult_gf_lamb_1kg_1000x1000_0.jpg');
