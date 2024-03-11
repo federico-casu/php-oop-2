@@ -1,10 +1,12 @@
 <?php
 
+include __DIR__ . '/Availability.php';
 class Item {
     protected $name;
     protected $price;
     protected $image;
     protected $pet;
+    use Availability;
 
     function __construct(string $_name, float $_price, string $_pet)
     {
